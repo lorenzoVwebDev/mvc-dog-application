@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/lorenzoVwebDev/logs-table-reader-mvc#readme",
   "dependencies": {
+    "all": "^0.0.0",
     "sass": "^1.83.4"
   },
   "devDependencies": {

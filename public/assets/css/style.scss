@@ -51,7 +51,7 @@ $black-footer: rgb(23, 23, 23);
   flex-direction: column;
 }
 
-.body {
+body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -78,7 +78,55 @@ $black-footer: rgb(23, 23, 23);
  
 .main-section {
   flex: 1;
-}
+  padding-left: calc(1vw + 1vh);
+  padding-right: calc(1vw + 1vh);
+  & form {
+    display: flex;
+    flex-direction: column ;
+  & h2 {
+    text-align: center;
+  }
+  & input[type=text] {
+    width: 30%;
+    padding-left: calc(0.2vw + 0.2vh);
+  }
+  & .radio-container {
+    display: flex;
+    gap: calc(1vh + 1vw);
+    & .radio-name-container {
+      & span {
+        display: block;
+      }
+    }
+    & .radio-input-container {
+/*       & input[type=radio] {
+        width: 20%;
+      }  */
+    }
+  }
+  & input[type=number] {
+    width: 20%;
+  }
+
+  & input[type=submit] {
+    text-align: center;
+    width: 40%;
+    @include poppins-bold;
+    border: none;
+    background-color: $blue-fb;
+    color: $white-font;
+    border-radius: 25px;
+    padding-top: calc(0.3vw + 0.3vh);
+    padding-bottom: calc(0.3vw + 0.3vh);
+    box-shadow: 2px 2px 8px gray;
+    font-size: calc(0.8vw + 0.8vh);
+    & :active {
+      border: solid 1px $blue-fb;
+      color: $blue-fb;
+    }
+  }
+  }
+} 
 .footer-container {
     display: inline-flex;
     flex-direction: column;
@@ -232,4 +280,6 @@ $black-footer: rgb(23, 23, 23);
     }
   
   }
+
+
 

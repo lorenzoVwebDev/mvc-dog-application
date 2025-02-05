@@ -16,7 +16,7 @@
   flex-direction: column;
 }
 
-.body {
+body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -48,6 +48,53 @@
 
 .main-section {
   flex: 1;
+  padding-left: calc(1vw + 1vh);
+  padding-right: calc(1vw + 1vh);
+}
+.main-section form {
+  display: flex;
+  flex-direction: column;
+}
+.main-section form h2 {
+  text-align: center;
+}
+.main-section form input[type=text] {
+  width: 30%;
+  padding-left: calc(0.2vw + 0.2vh);
+}
+.main-section form .radio-container {
+  display: flex;
+  gap: calc(1vh + 1vw);
+}
+.main-section form .radio-container .radio-name-container span {
+  display: block;
+}
+.main-section form .radio-container .radio-input-container {
+  /*       & input[type=radio] {
+          width: 20%;
+        }  */
+}
+.main-section form input[type=number] {
+  width: 20%;
+}
+.main-section form input[type=submit] {
+  text-align: center;
+  width: 40%;
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: normal;
+  border: none;
+  background-color: rgb(8, 144, 255);
+  color: rgb(255, 255, 255);
+  border-radius: 25px;
+  padding-top: calc(0.3vw + 0.3vh);
+  padding-bottom: calc(0.3vw + 0.3vh);
+  box-shadow: 2px 2px 8px gray;
+  font-size: calc(0.8vw + 0.8vh);
+}
+.main-section form input[type=submit] :active {
+  border: solid 1px rgb(8, 144, 255);
+  color: rgb(8, 144, 255);
 }
 
 .footer-container {

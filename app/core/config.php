@@ -8,7 +8,7 @@ $dotenv->load();
 
 if ($_SERVER['SERVER_NAME'] == 'mvc-dog-application') {
   define('LOGS', __DIR__."//..//..//". "logs");
-  define('ROOT', 'http://logs-table-reader-mvc/');
+  define('ROOT', 'http://mvc-dog-application/');
   define('DBHOST', 'localhost');
   define('DBNAME', 'lorenzo1');
   define('DBUSER', 'root');
