@@ -1,7 +1,7 @@
 <?php
 class Dog {
 
-  function insertNewDog() {
+  function insertnewdog() {
     try {
       
       if((isset($_POST['dog_app']))) {
@@ -53,7 +53,7 @@ class Dog {
       } 
   }
 
-  function getBreeds() {
+  function getbreeds() {
     try {
       if (isset($_GET['type'])) {
         $selectBox_request=$_GET['type'];
@@ -61,14 +61,14 @@ class Dog {
         $breeds=$container->create_object($selectBox_request);
     
         if ($breeds!=false) {
-          $properties=__DIR__."..//config//breeds.xml";
+          $properties=__DIR__."//..//config//breeds.xml";
           $selectBox=$breeds->get_select($properties);
           if ($selectBox != strip_tags($selectBox)) {
             http_response_code(200);
             header('Content-Type: text/html');
             echo $selectBox;
           } else {
-            throw new Exception('breeds html not created', 500)
+            throw new Exception('breeds html not created', 500);
           }
         } else {
           throw new Exception('breeds file not found', 500);  

@@ -23,6 +23,7 @@ class Dog_container {
       foreach($typeNodes as $searchNodes) {
         $id=$searchNodes->getAttribute('ID');
         if($id==$this->app) {
+          
           $location=$searchNodes->getElementsByTagName('location');
           $file=$location->item(0)->nodeValue;
           return $file;
@@ -34,9 +35,9 @@ class Dog_container {
   }
 
   function create_object($properties) {
-    $dog_loc=$this->get_dog_application();
+    $dog_loc=__DIR__.$this->get_dog_application();
     if(($dog_loc==false)||(!file_exists($dog_loc))) {
-      print 'false'.'<br>';
+      //print "doesn't work"."<br>";
       throw new Exception('"dog_container.php"'."$doc_log".'not found');
       return false;
     } else {

@@ -33,6 +33,10 @@
       </div>
       Enter your dog's weight here (numeric only)
       <input type="number" min="0" max="120" name="dog_weight" id="dog_weight" required/><br/>
+      <script>
+        AjaxRequest('http://mvc-dog-application/public/dog/getbreeds?type=selectbox')
+      </script>
+      <div id="AjaxResponse"></div>
       <input type="hidden" name="dog_app" id="dog_app" value="dog"/>
       <input type="submit" value="click to create your dog"/>
     </form>
