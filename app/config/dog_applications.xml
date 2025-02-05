@@ -2,7 +2,7 @@
 <dog_applications>
     <application>
         <type ID='dog'>
-            <location>../models/entities/dog.entity.php</location>
+            <location>//..//models//entities//dog.entity.php</location>
         </type>
     </application>
     <application>

@@ -1,6 +1,6 @@
 <?php
 
-class Breedsview {
+class Breeds_view {
   //set $result public
   private $result;
   function __construct($properties_array) {

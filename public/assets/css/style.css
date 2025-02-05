@@ -97,6 +97,58 @@ body {
   color: rgb(8, 144, 255);
 }
 
+.table-section {
+  display: flex;
+  justify-content: center;
+}
+.table-section .dog-table {
+  width: 80%; /* Full width */
+  border-collapse: collapse; /* Removes spacing between borders */
+  margin: 20px 0; /* Adds some spacing around the table */
+  font-size: 16px; /* Makes text readable */
+  text-align: left; /* Aligns text to the left */
+  background-color: #f9f9f9; /* Light background */
+}
+.table-section .dog-table th {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  padding: 12px; /* Adds space inside headers */
+  text-transform: uppercase; /* Makes header text uppercase */
+  text-align: center;
+}
+.table-section .dog-table td {
+  padding: 10px; /* Adds spacing inside table cells */
+  border-bottom: 1px solid #ddd; /* Adds a subtle border */
+  text-align: center;
+}
+.table-section .dog-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.table-section .dog-table tr:hover {
+  background-color: #ddd;
+}
+.table-section .dog-table .delete-log {
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: normal;
+  border: none;
+  background-color: red;
+  color: rgb(255, 255, 255);
+  border-radius: 25px;
+  padding-top: calc(0.3vw + 0.3vh);
+  padding-bottom: calc(0.3vw + 0.3vh);
+  box-shadow: 2px 2px 8px gray;
+  font-size: calc(0.6vw + 0.6vh);
+  padding-right: calc(0.3vw + 0.3vh);
+  padding-left: calc(0.3vw + 0.3vh);
+  cursor: pointer;
+}
+.table-section .dog-table .delete-log:active {
+  background-color: white;
+  border: solid 1px red;
+  color: red;
+}
+
 .footer-container {
   display: inline-flex;
   flex-direction: column;

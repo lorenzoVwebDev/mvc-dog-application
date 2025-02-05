@@ -112,7 +112,7 @@ class Logs extends Controller {
           if (file_exists(__DIR__."//..//views//table.view.php")) {
             require(__DIR__."//..//views//table.view.php");
             $tableInstance = new Table_view($event_array, $type);
-            $table = $tableInstance->createTable();
+            $table = $tableInstance->createTableLogs();
             if ($table != strip_tags($table)) {
               http_response_code(200);
               header("Content-Type: text/html");

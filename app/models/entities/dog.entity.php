@@ -1,5 +1,5 @@
 <?php 
-class Dog {
+class Dog_entity {
   //Properties IMPORTANT (set the properties private after the development process)
   private $dog_weight = 0;
   private $dog_breed = "no breed";
@@ -62,7 +62,7 @@ class Dog {
   //breed validator method
 
   private function validator_breed($string) {
-    $breed_xml=simplexml_load_file("../xml-files/breeds.xml");
+    $breed_xml=simplexml_load_file(__DIR__."//..//..//config//breeds.xml");
     $xmltext=$breed_xml->asXML();
 
     if(!stristr($xmltext, $string)) {

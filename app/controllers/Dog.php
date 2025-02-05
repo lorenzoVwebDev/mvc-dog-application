@@ -1,7 +1,7 @@
 <?php
 class Dog {
 
-  function insertnewdog() {
+  function insertdog() {
     try {
       
       if((isset($_POST['dog_app']))) {
@@ -26,17 +26,56 @@ class Dog {
           }
       
           if ($lab != false) {
-            error_check_dog_app($lab);
-            get_properties($lab);
+            list($name_error, $breed_error, $color_error, $weight_error) = explode(',', $lab->to_string());
+            
+            $name_update = $name_error == 'true' ? true : false;
+            $breed_updated = $breed_error == 'true' ? true : false;
+            $color_update = $color_error == 'true' ? true : false;
+            $weight_update = $weight_error = 'true' ? true : false;
+
+            $dogs_array['errors'] = array (
+              0 => $name_update,
+              1 => $breed_updated,
+              2 => $color_update,
+              3 => $weight_update
+            );
+
+            $dogs_array['credentials'] = array (
+              0 => $lab->get_dog_name(),
+              1 => $lab->get_dog_breed(),
+              2 => $lab->get_dog_color(),
+              3 => $lab->get_dog_weight(),
+            );
+
+            if (file_exists(__DIR__."//..//views//table.view.php")) {
+              require(__DIR__."//..//views//table.view.php");
+              $tableInstance = new Table_view($dogs_array);
+              $table = $tableInstance->createTableDog();
+
+              if ($table != strip_tags($table)) {
+                http_response_code(200);
+                header("Content-Type: text/html");
+                echo $table;
+              } else {
+                throw new Exception("Table not created", 500);
+              }
+            } else {
+              throw new Exception('table.view.php not found', 500);
+            }
           } else {
             throw new Exception('"dog_interface.php" dog not created');
           }
         } else {
-          print "<p>Missing or invalid parameters. Please go back to the dog home page to enter valid information. <br/>";
-          print "<a href='dog.html'>Dog Creation Page<a/>";
+          http_response_code(401);
+          headers('Content-Type: text/plain');
+          echo 'Missing or invalid parameters. Please go back to the dog home page to enter valid information. Dog Creation Page';
+          throw new Exception('missing parameters', 401);
         }
       } else {
-        throw new Exception('request not valid');
+        http_response_code(401);
+        headers('Content-Type: text/plain');
+        echo 'Request is not valid';
+        throw new Exception('request not valid', 401);
         
       } 
       } catch (Exception $e) {
