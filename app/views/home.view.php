@@ -4,12 +4,14 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MVC-dog-application</title>
-  <link rel="stylesheet" href="<?=ROOT?>public/assets/css/style.css"/>
+  <link rel="stylesheet" href="<?=ROOT?>public/assets/css/home.css"/>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-  <script src="<?= ROOT?>public/assets/js/services/get_breeds.js"></script>
+  <script src="<?= ROOT?>public/assets/js/services/home/get_breeds.js"></script>
   <section class="git-header-section"></section>
   <section class="main-section">
+  <a href="<?= ROOT?>public/admin/dashboard/dashboard"class="toggle-dashboard">Admin Dashboard<i class='bx bx-book-content'></i></a>
   <!-- action="http://mvc-dog-application/public/dog/insertdog" -->
    <form  method="post" class="insert-dog-form">
       <h2>Please, complete ALL fields. Please note the required format of information.</h2>
@@ -46,6 +48,6 @@
   </section>
   <section class="footer-section"></section>
   <script src="<?= ROOT?>public/assets/js/common-components/index.js" type="module"></script>
-  <script async src="<?= ROOT?>public/assets/js/index.js" type="module"></script>
+  <script async src="<?= ROOT?>public/assets/js/home.js" type="module"></script>
 </body>
 </html>

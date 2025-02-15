@@ -1,0 +1,7 @@
+2025-02-15T20:43:48+01:00
+expected ";".
+[34m    ╷[0m
+[34m208 │[0m           justify-content[31m[0m: center;
+[34m    │[0m [31m                         ^[0m
+[34m    ╵[0m
+  public\assets\css\scss\dashboard.scss 208:26  root stylesheet

@@ -47,6 +47,8 @@ class Dog {
               3 => $lab->get_dog_weight(),
             );
 
+            $_SESSION['created-dog'] = $dogs_array;
+            show($_SESSION['created-dog']);
             if (file_exists(__DIR__."//..//views//table.view.php")) {
               require(__DIR__."//..//views//table.view.php");
               $tableInstance = new Table_view($dogs_array);

@@ -151,7 +151,6 @@ class Logs extends Controller {
         $deleted_log = $model->logEvent($index, $type, 'delete');
 
         if ($deleted_log instanceof Exception) {
-          print $deleted_log;
           throw new Exception();
         } else {
 
@@ -250,7 +249,7 @@ class Logs extends Controller {
           if (file_exists(__DIR__."//..//views//table.view.php")) {
             require(__DIR__."//..//views//table.view.php");
             $tableInstance = new Table_view($event_array, filter_var($data['type'], FILTER_SANITIZE_FULL_SPECIAL_CHARS));
-            $table = $tableInstance->createTable();
+            $table = $tableInstance->createTableLogs();
             if ($table != strip_tags($table)) {
               $model = new Model();
               $send_mail = $model->sendMail([filter_var($data['form-hidden'], FILTER_SANITIZE_FULL_SPECIAL_CHARS), filter_var($data['name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_SANITIZE_FULL_SPECIAL_CHARS), filter_var($data['surname'], FILTER_SANITIZE_FULL_SPECIAL_CHARS), filter_var($data['log-date'], FILTER_SANITIZE_FULL_SPECIAL_CHARS), filter_var($data['type'], FILTER_SANITIZE_FULL_SPECIAL_CHARS), filter_var($data['mail'], FILTER_SANITIZE_EMAIL), $table]);

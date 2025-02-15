@@ -134,6 +134,49 @@ class Logs_model {
     }
   }
 
+  function logEmail() {
+    try {
+      $date = date('m.d.Y h:i:s');
+      $access_log = $date . " | email | " . $this->log_message . "\n";
+      define('EMAIL_LOG', LOGS . "//email//". date('mdy'). ".log");
+      $logFile = fopen(EMAIL_LOG, "a");
+      if (isset($logFile)) {
+        fwrite($logFile, $access_log);
+        fclose($logFile);
+        unset($logFile);
+        $logFile = fopen(EMAIL_LOG, "r");
+        if (isset($logFile)) {
+          $logsArray = [];
+          $row_count = 0;
+          while (!feof($logFile)) {
+            $logsArray[$row_count] = explode(" | ", fgets($logFile));
+            $row_count++;
+          }
+          $row_count--;
+          unset($logsArray[$row_count]);
+          fclose($logFile);  
+          if (trim($logsArray[count($logsArray)-1][2]) === trim($this->log_message)) {
+            $last_log_message = trim($logsArray[count($logsArray)-1][2]);
+            unset($logsArray);
+            return $last_log_message;
+          } else {
+            return array(
+              0 => 500,
+              1 => 'The email has not been logged'
+            );
+          } 
+        }
+      } else {
+        return array(
+          0 => 500, 
+          1 => date('mdy')."email log file not found"
+        );
+      }
+    } catch (Exception $e) {
+      $e->getMessage();
+    }
+  }
+
   function deleteLog(string|int $index) {
     try {    $type = $this->log_type;
       $index = (int)$index;
