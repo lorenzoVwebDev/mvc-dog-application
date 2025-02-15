@@ -12,23 +12,23 @@
   <section class="main-section">
     <a href="<?= ROOT?>public"class="toggle-dashboard">Home Page<i class='bx bx-book-content'></i></a>
       <section class="mail-section">
-      <h1>Request Your Table via e-mail</h1>      
+      <h1>Send events table to the admin's mail</h1>      
       <form id="mail-form">
           <div class="input-container">
             <label class="name">
-              <h3>Name</h3>
-              <input type="text" placeholder="Insert your name" pattern="[A-Za-z]+" minlenght="5" maxlenght="25" name="name" required />
+              Name
+              <input type="text" placeholder="Insert your name" pattern="[A-Za-z]+" minlenght="5" maxlenght="25" name="name" value="<?=ADMINNAME?>" required />
             </label>
             <label class="surname">
-              <h3>Surname</h3>
-              <input type="text" placeholder="Insert your Surname" pattern="[A-Za-z]+" minlenght="5" maxlenght="25" name="surname" required/>
+              Surname
+              <input type="text" placeholder="Insert your Surname" pattern="[A-Za-z]+" minlenght="5" maxlenght="25" name="surname" value="<?=ADMINSURNAME?>"required/>
             </label>
             <label class="birthdate">
-              <h3>Log Date</h3>
+              Log Date
               <input type="date" name="log-date" id="log-date" value="<?=date('Y-m-d')?>"/>
             </label>
             <label class="social">
-              <h3>Log Table</h3>
+              Log Table
               <select id="mail-form" name="type">
                 <option value="exception" selected>Exception</option>
                 <option value="error">Error</option>
@@ -36,39 +36,19 @@
               </select>
             </label>
             <label> 
-              <h3>e-mail</h3> 
-              <input type="email" placeholder="insert your mail" name="email" required/>
+              e-mail
+              <input type="email" placeholder="insert your mail" name="email" value="<?=ADMINMAIL?>"required/>
             </label>
+            <input type="text" value="table-mail" id="mail" name="form-hidden" hidden/>
+            <input type="submit" value="Submit"/>
           </div>
-          <input type="text" value="table-mail" id="mail" name="form-hidden" hidden/>
-          <input type="submit" value="Submit"/>
         </form>
       </section>
       <h1 style="
         text-align: center;
-      ">Or Create a new Log and display its respective table</h1>
+      ">Download events table o render it</h1>
     <section class="logs-section">
-      <div class="exception-container log-form">
-        <form method="post" id="exception-form">
-          <input type="text" name="exception-name" minlength="3" maxlength="20" placeholder="insert exception name" pattern="^[A-Za-z0-9 ]+$" required/>
-          <input type="hidden" name="type" id="type" value="exception"/>
-          <input type="submit"/>
-        </form>
-      </div>
-      <div class="error-container log-form">
-        <form method="post" id="error-form">
-          <input type="text" name="error-name" minlength="3" maxlength="20" placeholder="insert error name" pattern="^[A-Za-z0-9 ]+$" required/>
-          <input type="hidden" name="type" id="type" value="error"/>
-          <input type="submit"/>
-        </form>
-      </div>
-      <div class="access-container log-form">
-        <form method="post" id="access-form">
-          <input type="text" name="access-name" minlength="3" maxlength="20" placeholder="insert access name" pattern="^[A-Za-z0-9 ]+$" required/>
-          <input type="hidden" name="type" id="type" value="access"/>
-          <input type="submit"/>
-        </form>
-      </div>
+      
     </section>
     <section class="table-section">
     </section>

@@ -137,7 +137,12 @@ class Logs_model {
   function logEmail() {
     try {
       $date = date('m.d.Y h:i:s');
-      $access_log = $date . " | email | " . $this->log_message . "\n";
+      if ($this->log_message === ADMINMAIL) {
+        $access_log = $date . " | email | " . ADMINMAIL . "\n";
+      } else {
+        $access_log = $date . " | email | " . $this->log_message . "\n";
+      }
+
       define('EMAIL_LOG', LOGS . "//email//". date('mdy'). ".log");
       $logFile = fopen(EMAIL_LOG, "a");
       if (isset($logFile)) {

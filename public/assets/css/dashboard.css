@@ -79,19 +79,19 @@
 }
 .main-section .mail-section h1 {
   font-size: calc(1.3vw + 1.3vh);
-  text-align: center;
   margin-bottom: calc(0.6vw + 0.6vh);
 }
 .main-section .mail-section #mail-form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   gap: calc(1.2vw + 1.2vh);
 }
 .main-section .mail-section #mail-form .input-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: calc(1vw + 1vh);
 }
 .main-section .mail-section #mail-form .input-container input {
@@ -103,7 +103,10 @@
   font-weight: 300;
   font-style: normal;
 }
-.main-section .mail-section #mail-form input[type=submit] {
+.main-section .mail-section #mail-form .input-container select {
+  display: inline;
+}
+.main-section .mail-section #mail-form .input-container input[type=submit] {
   font-family: "Poppins", serif;
   font-weight: 700;
   font-style: normal;
@@ -118,10 +121,13 @@
   box-shadow: 2px 2px 8px gray;
   cursor: pointer;
 }
-.main-section .mail-section #mail-form input[type=submit]:active {
+.main-section .mail-section #mail-form .input-container input[type=submit]:active {
   background-color: rgb(255, 255, 255);
   border: solid 1px #FF3131;
   color: rgb(8, 144, 255);
+}
+.main-section .mail-section #mail-form .input-container input[type=submit]:hover {
+  transform: scale(1.1);
 }
 .main-section .logs-section {
   display: grid;

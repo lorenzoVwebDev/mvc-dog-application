@@ -5,11 +5,11 @@ CLIENT -> SERVER: AUTH LOGIN
 CLIENT -> SERVER: [credentials hidden]CLIENT -> SERVER: [credentials hidden]CLIENT -> SERVER: MAIL FROM:<lorenzoviganego@lorenzo-viganego.com>
 CLIENT -> SERVER: RCPT TO:<lorenzo.viganego@libero.it>
 CLIENT -> SERVER: DATA
-CLIENT -> SERVER: Date: Sat, 15 Feb 2025 20:00:25 +0000
+CLIENT -> SERVER: Date: Sat, 15 Feb 2025 20:13:25 +0000
 CLIENT -> SERVER: To: lorenzo.viganego@libero.it
 CLIENT -> SERVER: From: LorenzoVwebdev <lorenzoviganego@lorenzo-viganego.com>
 CLIENT -> SERVER: Subject: MVC mailer form portfolio project
-CLIENT -> SERVER: Message-ID: <g2U1w8fscZPzQIJb8dWzVOXQ3FUucVhtb6LDuPnB6GM@mvc-dog-application>
+CLIENT -> SERVER: Message-ID: <iVyLlFQTSclKJdg2PcNk9rc9cGHW841OtOAxqJAIfyA@mvc-dog-application>
 CLIENT -> SERVER: X-Mailer: PHPMailer 6.9.3 (https://github.com/PHPMailer/PHPMailer)
 CLIENT -> SERVER: MIME-Version: 1.0
 CLIENT -> SERVER: Content-Type: text/html; charset=iso-8859-1
