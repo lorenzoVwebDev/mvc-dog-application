@@ -1,22 +1,14 @@
 import { get_dogtable } from './services/get_dogtable.js';
 import { dogTable } from './view/dogtable.view.js'
-
+const server = 'https://apachebackend.lorenzo-viganego.com/mvc-dog-application/public/';
+const local = 'http://mvc-dog-application/public/'
+const url = local;
 
 document.addEventListener('submit', async (event) => {
   event.preventDefault();
   try {
-    const formData = new FormData(event.target);
-    const response = await get_dogtable(formData);
-
-    if (response.status >= 200 && response.status < 400) {
-      let dogArray = await response.text();
-      dogTable(dogArray);
-      
-    } else if (response.status >= 400 && response.status < 500) {
-      throw new Error('Bad Request');
-    } else if (response.status >= 500) {
-      throw new Error('Server Error')
-    }
+    const response = await get_dogtable(event, local);
+    dogTable(response);
   } catch (err) {
     console.error(err);
   }

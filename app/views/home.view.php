@@ -14,7 +14,7 @@
    <form  method="post" class="insert-dog-form">
       <h2>Please, complete ALL fields. Please note the required format of information.</h2>
       Enter your dog's name (max 20 characters, alphabetic)
-      <input type="text" maxlength="20" placeholder="Use up to 20 characters for the name" name="dog_name" id="dog_name" required/>
+      <input type="text" maxlength="20" placeholder="Use up to 20 characters for the name" name="dog_name" id="dog_name" value="lorenzo" required/>
       <h3>Select your Dog's Color:</h3> 
       <div class="radio-container">
         <div class="radio-name-container">
@@ -25,7 +25,7 @@
           <span>mixed</span>
         </div>
         <div class="radio-input-container">
-          <input type="radio" name="dog_color" id="dog_color" value="brown" /><br/>
+          <input type="radio" name="dog_color" id="dog_color" value="brown" checked/><br/>
           <input type="radio" name="dog_color" id="dog_color" value="black"/><br/>
           <input type="radio" name="dog_color" id="dog_color" value="yellow"/><br/>
           <input type="radio" name="dog_color" id="dog_color" value="white"/><br/>
@@ -33,7 +33,7 @@
         </div>
       </div>
       Enter your dog's weight here (numeric only)
-      <input type="number" min="0" max="120" name="dog_weight" id="dog_weight" required/><br/>
+      <input type="number" min="0" max="120" name="dog_weight" id="dog_weight" value="15" required/><br/>
       <script>
         AjaxRequest('https://apachebackend.lorenzo-viganego.com/mvc-dog-application/public/dog/getbreeds?type=selectbox')
       </script>
