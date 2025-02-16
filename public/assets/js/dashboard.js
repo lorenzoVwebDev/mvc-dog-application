@@ -9,7 +9,7 @@ import { renderResponse } from './view/dashboard/mailresponse.view.js'
 import { downloadLogFileView } from './view/dashboard/downloadlog.view.js'
 const server = 'https://apachebackend.lorenzo-viganego.com/mvc-dog-application/public/';
 const local = 'http://mvc-dog-application/public/'
-const url = local;
+const url = server;
 
 if (document.getElementById('mail-form')) {
   document.getElementById('mail-form').addEventListener('submit', async event => {
