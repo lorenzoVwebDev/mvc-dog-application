@@ -201,13 +201,13 @@ class Logs extends Controller {
           
           switch ($type) {
             case 'exception':
-              $log_file = LOGS."\\exceptions\\". $logDate .".log";
+              $log_file = LOGS."//exceptions//". $logDate .".log";
               break;
             case 'error':
-              $log_file = LOGS."\\errors\\". $logDate .".log";
+              $log_file = LOGS."//errors//". $logDate .".log";
               break;
             case 'access':
-              $log_file = LOGS."\\access\\". $logDate .".log";
+              $log_file = LOGS."//access//". $logDate .".log";
               break;
           } 
     
