@@ -1,16 +1,27 @@
 import "https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js";
 
-export async function downloadLogFile(type, serverUrl) {
-  console.log(type)
-  const blob = await fetch(`${serverUrl}download/downloadlogs/${type}?type=${type}`).then((response) => response.blob());
-  const url = window.URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = `${dayjs().format('DDMMYY')}${type}_logs.log`;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  window.URL.revokeObjectURL(url);
+export async function downloadLogFile(type, date,serverUrl) {
+  const response = await fetch(`${serverUrl}logs/downloadlogs/${type}?type=${type}&date=${date}`);
+
+  if (response.status >= 200 && response.status<400) {
+    const result = await response.blob();
+    return {
+      response,
+      result
+    }
+  } else if (response.status >= 400 && response.status < 500) {
+    const result = await response.json();
+    return {
+      response,
+      result
+    }
+  } else if (response.status >= 500) {
+    const result = await response.json();
+    return {
+      response,
+      result
+    }
+  }
 }
 
 

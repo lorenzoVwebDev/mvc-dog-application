@@ -6,6 +6,7 @@ import { submitMail } from './services/dashboard/submit.mailform.js'
 import { appendButtons, appendDelete } from './view/dashboard/appendelement.view.js';
 import { createTableAndMail } from "./view/dashboard/table.view.js";
 import { renderResponse } from './view/dashboard/mailresponse.view.js'
+import { downloadLogFileView } from './view/dashboard/downloadlog.view.js'
 const server = 'https://apachebackend.lorenzo-viganego.com/mvc-dog-application/public/';
 const local = 'http://mvc-dog-application/public/'
 const url = local;
@@ -22,7 +23,71 @@ if (document.getElementById('mail-form')) {
   })
 }
 
-document.querySelectorAll('.log-form').forEach(element => {
+document.getElementById('log-form').addEventListener('submit', async (event) => {
+  event.preventDefault();
+  try {
+    const type = event.target[0].value;  
+    const date = event.target[1].value;  
+    if (event.submitter.value === 'download') {
+      const resultObject = await downloadLogFile(type, date, url);
+      const {response, result} = resultObject;
+      downloadLogFileView(response, result, type);
+    } else if (event.submitter.value === 'show-table') {
+      const { response, result} = await downloadTable(type, date, url);
+      console.log(response)
+      const table = createTableAndMail(response, result);
+      appendDelete(table);
+      attachDeleteListener(type, url)
+    }
+  } catch (error) {
+    console.error(error)
+  }
+})
+
+function attachDeleteListener(type, url) {
+  document.querySelectorAll('.delete-log').forEach( element => {
+    element.addEventListener('click', async () => {
+      await deleteLog(type, element, url);
+      const result = await downloadTable(type, url);
+      const table = createTableAndMail(result);
+      appendDelete(table);
+      attachDeleteListener(type, url)
+    })
+  })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* document.querySelectorAll('.log-form').forEach(element => {
   element.addEventListener('submit', async (event) => {
     event.preventDefault();
     try {
@@ -56,4 +121,4 @@ function attachDeleteListener(type, url) {
       attachDeleteListener(type, url)
     })
   })
-}
+} */

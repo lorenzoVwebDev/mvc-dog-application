@@ -1,5 +1,5 @@
 
-const Footer = `<footer class="footer-container">
+let Footer = `<footer class="footer-container">
       <div class="footer-header">
         <div>
           <span>Get connected with me on social networks!</span>

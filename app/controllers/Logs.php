@@ -102,12 +102,17 @@ class Logs extends Controller {
 
   function table() {
     try {
-      if (isset($_GET['type'])) {
+      if (isset($_GET['type']) && isset($_GET['date'])) {
         $type = $_GET['type'];
+        $date = $_GET['date'];
         $model = new Model();
-        $event_array = $model->logsArray($type);
+        $event_array = $model->logsArray($type, $date);
         if ($event_array === "log file not found" || $event_array === 'logs_array.model.php not found') {
-          throw new Exception($event_array, 500);
+          http_response_code(401);
+          header('Content-Type: application/json');
+          $response['result'] = $event_array;
+          $response['status'] = 401;
+          echo json_encode($response);
         } else {
           if (file_exists(__DIR__."//..//views//table.view.php")) {
             require(__DIR__."//..//views//table.view.php");
@@ -183,37 +188,72 @@ class Logs extends Controller {
 
   function downloadlogs($type) {
     if (isset($_GET)) {
-      if (isset($_GET['type']) && $_GET['type'] === $type) {
-        switch ($type) {
-          case 'exception':
-            $log_file = LOGS."\\exceptions\\". date('mdy').".log";
-            break;
-          case 'error':
-            $log_file = LOGS."\\errors\\". date('mdy').".log";
-            break;
-          case 'access':
-            $log_file = LOGS."\\access\\". date('mdy').".log";
-            break;
-        } 
-  
-        if (file_exists($log_file)) {
-          header('Content-Description: File Transfer');
-          header('Content-Type: application/octet-stream');
-          header('Content-Disposition: attachment; filename='.basename($log_file));
-          header('Content-Transfer-Encoding: binary');
-          header('Expires: 0');
-          header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
-          header('Content-Length: '.filesize($log_file));
-          ob_clean();
-          flush();
-          readfile($log_file);
-          exit;
+      if (isset($_GET['type']) && $_GET['type'] === $type && isset($_GET['date'])) {
+        try {
+          $date = $_GET['date'];
+
+          if ($date) {
+            $setDate = date_create($date);
+            $logDate = date_format($setDate, "mdy");
+          } else {
+            $logDate = date('mdy');
+          }
+          
+          switch ($type) {
+            case 'exception':
+              $log_file = LOGS."\\exceptions\\". $logDate .".log";
+              break;
+            case 'error':
+              $log_file = LOGS."\\errors\\". $logDate .".log";
+              break;
+            case 'access':
+              $log_file = LOGS."\\access\\". $logDate .".log";
+              break;
+          } 
+    
+          if (file_exists($log_file)) {
+            header('Content-Description: File Transfer');
+            header('Content-Type: application/octet-stream');
+            header('Content-Disposition: attachment; filename='.basename($log_file));
+            header('Content-Transfer-Encoding: binary');
+            header('Expires: 0');
+            header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+            header('Content-Length: '.filesize($log_file));
+            ob_clean();
+            flush();
+            readfile($log_file);
+            exit;
+          } else {
+            http_response_code(401);
+            header('Content-Type: application/json');
+            $response['result'] = 'File not found';
+            $response['status'] = 401;
+            echo json_encode($response);
         }
-      } else {
-        
-      }
-    }
+         } catch (Exception $e) {
+            http_response_code(500);
+            header('Content-Type: application/json');
+            $response['result'] = 'We are sorry! We are goin to fix that as soon as possible';
+            $response['status'] = 500;
+            echo json_encode($response);
+            require_once(__DIR__ ."//..//models//logs.model.php");
+            $exception = new Logs_model($e->getMessage(), 'exception');
+            $last_log_message = $exception->logException();
+            unset($exception);
+        } catch (Error $e) {
+            http_response_code(500);
+            header('Content-Type: application/json');
+            $response['result'] = 'We are sorry! We are goin to fix that as soon as possible';
+            $response['status'] = 500;
+            echo json_encode($response);
+            require_once(__DIR__ ."//..//models//logs.model.php");
+            $exception = new Logs_model($e->getMessage(), 'exception');
+            $last_log_message = $exception->logException();
+            unset($exception);
+        }
+    } 
   }
+}
 
   function sendtable() {
     $json = file_get_contents('php://input');
