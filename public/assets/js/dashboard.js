@@ -7,9 +7,7 @@ import { appendButtons, appendDelete } from './view/dashboard/appendelement.view
 import { createTableAndMail } from "./view/dashboard/table.view.js";
 import { renderResponse } from './view/dashboard/mailresponse.view.js'
 import { downloadLogFileView } from './view/dashboard/downloadlog.view.js'
-const server = 'https://apachebackend.lorenzo-viganego.com/mvc-dog-application/public/';
-const local = 'http://mvc-dog-application/public/'
-const url = server;
+import { url } from './utils/globalVariables.js'
 
 if (document.getElementById('mail-form')) {
   document.getElementById('mail-form').addEventListener('submit', async event => {
@@ -36,19 +34,22 @@ document.getElementById('log-form').addEventListener('submit', async (event) => 
       const { response, result} = await downloadTable(type, date, url);
       const table = createTableAndMail(response, result);
       appendDelete(table);
-      attachDeleteListener(type, date, url, response)
+      attachDeleteListener(type, date, url)
     }
   } catch (error) {
     console.error(error)
   }
 })
 
-function attachDeleteListener(type, date, url, response) {
+function attachDeleteListener(type, date, url) {
   document.querySelectorAll('.delete-log').forEach( element => {
     element.addEventListener('click', async () => {
+      console.log('hello')
       await deleteLog(type, element, url);
-      const result = await downloadTable(type, date, url);
+      const {result, response} = await downloadTable(type, date, url);
+      console.log(response)
       const table = createTableAndMail(response, result);
+      console.log(table)
       appendDelete(table);
       attachDeleteListener(type, date, url, response)
     })

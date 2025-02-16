@@ -1,5 +1,3 @@
-const server = 'https://apachebackend.lorenzo-viganego.com/mvc-mailer-form/public/';
-const local = 'http://mvc-mailer-form/public/'
 
 export function appendButtons(response) {
   if (document.querySelector(`.${response.logType}-request-container`)) {

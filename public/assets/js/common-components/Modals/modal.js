@@ -1,3 +1,4 @@
+import { url } from '../../utils/globalVariables.js'
 
 let modal = `
     <div class="modal modal-sheet position-static d-block p-4 py-md-5" tabindex="-1" role="dialog" id="modalSheet">

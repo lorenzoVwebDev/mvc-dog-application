@@ -1,6 +1,4 @@
-const server = 'https://apachebackend.lorenzo-viganego.com/mvc-dog-application/public/';
-const local = 'http://mvc-dog-application/public/'
-const url = server;
+import { url } from '../../utils/globalVariables.js'
 
 let Headers = `
       <header class="p-3 text-bg-dark">

@@ -1,3 +1,4 @@
+import { url } from '../../utils/globalVariables.js'
 
 let Footer = `<footer class="footer-container">
       <div class="footer-header">
