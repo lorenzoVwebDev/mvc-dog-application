@@ -24,7 +24,6 @@ class Model {
           }
         } else if ($log_event === 'delete') {
             $delete_log = new Logs_model('', $log_type);
-            //index passed as $log_message
             $log_deleted = $delete_log->deleteLog($log_message);
             if ($log_deleted === 'log deleted') {
               return $log_deleted;

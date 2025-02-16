@@ -34,24 +34,23 @@ document.getElementById('log-form').addEventListener('submit', async (event) => 
       downloadLogFileView(response, result, type);
     } else if (event.submitter.value === 'show-table') {
       const { response, result} = await downloadTable(type, date, url);
-      console.log(response)
       const table = createTableAndMail(response, result);
       appendDelete(table);
-      attachDeleteListener(type, url)
+      attachDeleteListener(type, date, url, response)
     }
   } catch (error) {
     console.error(error)
   }
 })
 
-function attachDeleteListener(type, url) {
+function attachDeleteListener(type, date, url, response) {
   document.querySelectorAll('.delete-log').forEach( element => {
     element.addEventListener('click', async () => {
       await deleteLog(type, element, url);
-      const result = await downloadTable(type, url);
-      const table = createTableAndMail(result);
+      const result = await downloadTable(type, date, url);
+      const table = createTableAndMail(response, result);
       appendDelete(table);
-      attachDeleteListener(type, url)
+      attachDeleteListener(type, date, url, response)
     })
   })
 }
