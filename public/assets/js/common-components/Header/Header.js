@@ -1,6 +1,6 @@
 const server = 'https://apachebackend.lorenzo-viganego.com/mvc-dog-application/public/';
 const local = 'http://mvc-dog-application/public/'
-const url = local;
+const url = server;
 
 let Headers = `
       <header class="p-3 text-bg-dark">
