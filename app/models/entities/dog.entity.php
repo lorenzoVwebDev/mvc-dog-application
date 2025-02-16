@@ -41,7 +41,9 @@ class Dog_entity {
 
   public function set_dog_breed(string $value):bool {
     $error_message= true;
-    (ctype_alpha($value)&&$this->validator_breed($value)) ? $this->dog_breed=$value:$error_message=false;
+    $breedBool = $this->validator_breed($value);
+    $ctypeBool = ctype_alpha(str_replace(' ', '', $value));
+    ($ctypeBool && $breedBool) ? $this->dog_breed = $value : $error_message=false;
     return $error_message;
   }
 
@@ -62,17 +64,19 @@ class Dog_entity {
   //breed validator method
 
   private function validator_breed($string) {
-    $breed_xml=simplexml_load_file(__DIR__."//..//..//config//breeds.xml");
-    $xmltext=$breed_xml->asXML();
-
-    if(!stristr($xmltext, $string)) {
-      return false;
+  
+    if (file_exists(__DIR__."//..//..//config//breeds.xml")) {
+      $breed_xml=simplexml_load_file(__DIR__."//..//..//config//breeds.xml");
+      $xmltext=$breed_xml->asXML();
+      if(!stristr($xmltext, $string)) {
+        return false;
+      } else {
+        return true;
+      }
     } else {
-      return true;
+      throw new Exception('breeds.xml not found', 500);
     }
   }
-
-  //getMethods
 
   function get_dog_name() {
     return $this->dog_name;

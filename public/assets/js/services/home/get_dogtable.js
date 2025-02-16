@@ -1,26 +1,16 @@
-import { get_dogtable } from './services/get_dogtable.js';
-import { dogTable } from './view/dogtable.view.js'
-
-
-document.addEventListener('submit', async (event) => {
-  event.preventDefault();
-  try {
+export async function get_dogtable(event, url) {
     const formData = new FormData(event.target);
-    const response = await get_dogtable(formData);
+    const response = await fetch(`${url}dog/insertdog`, {
+      method: "POST",
+      body: formData
+    });
 
     if (response.status >= 200 && response.status < 400) {
       let dogArray = await response.text();
-      dogTable(dogArray);
-      
+      return dogArray;
     } else if (response.status >= 400 && response.status < 500) {
       throw new Error('Bad Request');
     } else if (response.status >= 500) {
       throw new Error('Server Error')
     }
-  } catch (err) {
-    console.error(err);
-  }
-})
-
-
-
+}

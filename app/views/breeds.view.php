@@ -23,7 +23,6 @@ class Breeds_view {
       $this->result=$selectBox;
       return $this->result;
     } else {
-      print 'hello';
       throw new Exception('"get_breeds.php" breeds.xml not found');
     }
   }

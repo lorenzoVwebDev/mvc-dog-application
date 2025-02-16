@@ -7,6 +7,11 @@ $dotenv = Dotenv::createImmutable(__DIR__. '/../../');
 $dotenv->load();
 
 if ($_SERVER['SERVER_NAME'] == 'mvc-dog-application') {
+  define('EMAILUSERNAME', $_ENV['EMAIL_USERNAME']);
+  define('EMAILPASSWORD', $_ENV['EMAIL_PASSWORD']);
+  define('ADMINNAME', $_ENV['ADMINNAME']);
+  define('ADMINSURNAME', $_ENV['ADMINSURNAME']);
+  define('ADMINMAIL', $_ENV['ADMINMAIL']);
   define('LOGS', __DIR__."//..//..//". "logs");
   define('ROOT', 'http://mvc-dog-application/');
   define('DBHOST', 'localhost');
@@ -15,8 +20,13 @@ if ($_SERVER['SERVER_NAME'] == 'mvc-dog-application') {
   define('DBPASSWORD', $_ENV['DB_PASSWORD']);
 } else {
   /*   we can use this ROOT constant in a index.php file to define a path <a href="<?= ROOT ?>path/to/page">Click Here</a>; The <?= ROOT?> syntax is a shorthand for <php? echo ROOT; ?>*/
+  define('EMAILUSERNAME', $_ENV['EMAIL_USERNAME']);
+  define('EMAILPASSWORD', $_ENV['EMAIL_PASSWORD']);
+  define('ADMINNAME', $_ENV['ADMINNAME']);
+  define('ADMINSURNAME', $_ENV['ADMINSURNAME']);
+  define('ADMINMAIL', $_ENV['ADMINMAIL']);
   define('LOGS', __DIR__."//..//..//". "logs");
-  define('ROOT', 'https://apachebackend.lorenzo-viganego.com/dog-application-mvc');
+  define('ROOT', 'https://apachebackend.lorenzo-viganego.com/mvc-dog-application/');
   define('DBHOST', 'localhost');
   define('DBNAME', 'lorenzo1');
   define('DBUSER', 'root');

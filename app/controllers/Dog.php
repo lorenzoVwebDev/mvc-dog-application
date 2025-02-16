@@ -27,12 +27,12 @@ class Dog {
       
           if ($lab != false) {
             list($name_error, $breed_error, $color_error, $weight_error) = explode(',', $lab->to_string());
-            
+/*             show(explode(',', $lab->to_string())); */
             $name_update = $name_error == 'true' ? true : false;
             $breed_updated = $breed_error == 'true' ? true : false;
             $color_update = $color_error == 'true' ? true : false;
             $weight_update = $weight_error = 'true' ? true : false;
-
+            
             $dogs_array['errors'] = array (
               0 => $name_update,
               1 => $breed_updated,
@@ -47,6 +47,8 @@ class Dog {
               3 => $lab->get_dog_weight(),
             );
 
+            $_SESSION['created-dog'] = $dogs_array;
+            
             if (file_exists(__DIR__."//..//views//table.view.php")) {
               require(__DIR__."//..//views//table.view.php");
               $tableInstance = new Table_view($dogs_array);
@@ -84,10 +86,14 @@ class Dog {
         $last_log_message = $exception->logException();
         unset($exception);
         $exceptionCode = $e->getCode();
-        if ($exceptionCode === 500) {
+        if ($exceptionCode >= 500) {
           http_response_code(500);
           header("Content-Type: text/plain");
           echo "Error 500: We are sorry, we are going to resolve the issue as soon as possible";
+        } else {
+          http_response_code($exceptionCode);
+          header("Content-Type: text/plain");
+          echo $e->getMessage();
         }
       } 
   }
