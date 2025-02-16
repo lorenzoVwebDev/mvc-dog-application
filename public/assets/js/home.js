@@ -7,7 +7,7 @@ const url = server;
 document.addEventListener('submit', async (event) => {
   event.preventDefault();
   try {
-    const response = await get_dogtable(event, local);
+    const response = await get_dogtable(event, url);
     dogTable(response);
   } catch (err) {
     console.error(err);
