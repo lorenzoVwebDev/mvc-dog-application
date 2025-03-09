@@ -19,7 +19,15 @@ class Signin_mysql {
   }
 
   function __destruct() {
-    $mysqli = new mysqli(DBHOST, DBUSER, DBPASSWORD, DBNAME);
+    $table_query = "CREATE TABLE IF NOT EXISTS ".$_SESSION['username']." (
+      dogname varchar(20), 
+      dogbreed varchar(100), 
+      dogcolor enum('Brown', 'Black', 'Yellow', 'White', 'Mixed'), 
+      dogweight integer NOT NULL CHECK (dogweight > 0 AND dogweight <= 120 )
+    )";
+  $bool = $this->createNewDogTable($table_query);
+
+  $mysqli = new mysqli(DBHOST, DBUSER, DBPASSWORD, DBNAME);
     if (!$mysqli->query("DROP TABLE IF EXISTS users") || !$mysqli->query("CREATE TABLE IF NOT EXISTS users (
       username varchar(50),
       email varchar(255),
@@ -34,6 +42,7 @@ class Signin_mysql {
     }
 
     foreach ($this->users_array as $user) {
+      
       $username = $user['username'];
       $email = $user['email'];
       $password = $user['password'];

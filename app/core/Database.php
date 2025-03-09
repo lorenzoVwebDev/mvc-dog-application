@@ -10,6 +10,7 @@ trait Database {
   public function query($query, array $data = []) {
     $con = $this->connect();
     //query specification 
+
     $stm = $con->prepare($query);
     //query execution: $check is a boolean that returns either true or false
     $check = $stm->execute($data);
@@ -20,6 +21,25 @@ trait Database {
         return $result;
       } else {
         return [];
+      }
+    } else {
+      throw new Exception('can\'t validate the query'.$stm->errorInfo()[2], 500);
+    }
+    unset($con);
+  }
+
+  public function createNewDogTable($query, array $data = []) {
+    $con = $this->connect();
+    //query specification 
+    $stm = $con->prepare($query);
+    //query execution: $check is a boolean that returns either true or false
+    $check = $stm->execute($data);
+    if ($check) {
+      $result = $stm->fetchAll(PDO::FETCH_NAMED);
+      if (is_array($result) && count($result)) {
+        return true;
+      } else {
+        return true;
       }
     } else {
       throw new Exception('can\'t validate the query'.$stm->errorInfo()[2], 500);

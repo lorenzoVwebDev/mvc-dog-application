@@ -3,13 +3,13 @@
 class Dog_data {
   use Database;
   public $dogs_array = array();
+  public $username = '';
 
   function __construct() {
-
-    $query_string = "SELECT * FROM ".$_SESSION['username']."_dogs";
-    $array = $this->query($query_string);
-    $this->dogs_array = $array;
-
+      $this->username = $_SESSION['username'];
+      $query_string = 'SELECT * FROM '.$this->username;
+      $array = $this->query($query_string);
+      $this->dogs_array = $array;
   } 
 
   function __destruct() {
@@ -51,7 +51,7 @@ class Dog_data {
         }  
     }
 
-    $mysqli->close();
+    $mysqli->close(); 
   }
 
   function createRecord($records_array) {
