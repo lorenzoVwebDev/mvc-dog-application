@@ -38,6 +38,27 @@ $beige: #F5F5DC;
   font-style: normal;
 }
 
+@mixin blue-button($widht: 100%) {
+  width: $widht;
+  @include poppins-bold;
+  border: none;
+  background-color: $blue-fb;
+  color: $white-font;
+  border-radius: 25px;
+  padding-top: calc(0.3vw + 0.3vh);
+  padding-bottom: calc(0.3vw + 0.3vh);
+  box-shadow: 2px 2px 8px gray;
+  cursor: pointer;
+  transition: all 0.3s;
+  &:active {
+    background-color: $white-font;
+    border: solid 1px $neon-red;
+    color: $blue-fb;
+  }
+  &:hover {
+    transform: scale(1.1);
+  }
+}
 
 * {
   margin: 0;
@@ -68,134 +89,42 @@ body {
   padding-left: calc(1vw + 1vh);
   padding-right: calc(1vw + 1vh);
 
-  & .toggle-dashboard {
+  & .welcome-container {
     display: flex;
+    justify-content:center;
     align-items: center;
-    position: absolute;
-    top: 0;
-    left: calc(0.2vw + 0.2vh);
-    border: none;
-    background-color: white;
-    cursor: pointer;
-    transition: all 0.2s;
-    font-size: calc(0.8vw + 0.8vh);
-    &.off {
-      display: none;
-    }
-    & .book-closed {
-      font-size: calc(2.5vw + 2.5vh);
-    }
-    &:active {
-      color: $neon-orange;
-    }
-    &:hover {
-      transform: scale(1.1);
-    }
-  }
 
-  & form {
-    display: flex;
-    flex-direction: column ;
-  & h2 {
-    text-align: center;
-  }
-  & input[type=text] {
-    width: 30%;
-    padding-left: calc(0.2vw + 0.2vh);
-  }
-  & .radio-container {
-    display: flex;
-    gap: calc(1vh + 1vw);
-    & .radio-name-container {
-      & span {
-        display: block;
+    & .wcontainer-left {
+      & h1 {
+        font-size: calc(1.7vw + 1.7vh);
+      }
+      & p {
+        font-size: calc(1vw + 1vh);
+      }
+      & .start-creation-button {
+        @include blue-button(30%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & a {
+          font-size: calc(0.8vw + 0.8vh);
+          color: white;
+          text-decoration: none;
+        }
       }
     }
-    & .radio-input-container {
-/*       & input[type=radio] {
-        width: 20%;
-      }  */
-    }
-  }
-  & input[type=number] {
-    width: 20%;
-  }
 
-  & select {
-    margin-bottom: calc(1vw + 1vh);
-  }
-
-  & input[type=submit] {
-    text-align: center;
-    width: 40%;
-    @include poppins-bold;
-    border: none;
-    background-color: $blue-fb;
-    color: $white-font;
-    border-radius: 25px;
-    padding-top: calc(0.3vw + 0.3vh);
-    padding-bottom: calc(0.3vw + 0.3vh);
-    box-shadow: 2px 2px 8px gray;
-    font-size: calc(0.8vw + 0.8vh);
-    & :active {
-      border: solid 1px $blue-fb;
-      color: $blue-fb;
+    & .wcontainer-right {
+      width: 70%;
+      border: solid 1px black;
+      overflow: hidden;
+      border-radius: 10px;
+      & img {
+        width: 100%;
+      }
     }
-  }
   }
 } 
 
-.table-section {
-  display: flex;
-  justify-content: center;
-  & .dog-table {
-   width: 80%; /* Full width */
-    border-collapse: collapse; /* Removes spacing between borders */
-    margin: 20px 0; /* Adds some spacing around the table */
-    font-size: 16px; /* Makes text readable */
-    text-align: left; /* Aligns text to the left */
-    background-color: #f9f9f9; /* Light background */
-    & th {
-      background-color: #4CAF50; /* Green background */
-      color: white; /* White text */
-      padding: 12px; /* Adds space inside headers */
-      text-transform: uppercase; /* Makes header text uppercase */
-      text-align: center;
-    }
-    & td {
-      padding: 10px; /* Adds spacing inside table cells */
-      border-bottom: 1px solid #ddd; /* Adds a subtle border */
-      text-align: center;
-    }
-
-    & tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
-    
-    & tr:hover {
-      background-color: #ddd;
-    }
-
-    & .delete-log {
-      @include poppins-bold;
-      border: none;
-      background-color: red;
-      color: $white-font;
-      border-radius: 25px;
-      padding-top: calc(0.3vw + 0.3vh);
-      padding-bottom: calc(0.3vw + 0.3vh);
-      box-shadow: 2px 2px 8px gray;
-      font-size: calc(0.6vw + 0.6vh);
-      padding-right: calc(0.3vw + 0.3vh);
-      padding-left: calc(0.3vw + 0.3vh);
-      cursor: pointer;
-      &:active {
-        background-color: white;
-        border: solid 1px red;
-        color: red;
-      }
-    }
-  } 
-}
 
 

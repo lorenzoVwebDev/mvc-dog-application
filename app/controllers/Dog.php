@@ -1,104 +1,137 @@
 <?php
 class Dog {
+  use Jasonwebtoken;
 
-  function insertdog() {
+  function dogcrud($type) {
+    $this->requireAuth();
     try {
-      
-      if((isset($_POST['dog_app']))) {
+      $crudArray = array (
+        'insert',
+        'select',
+        'update',
+        'delete'
+      );
+
+      $needle = in_array(filter_var($type, FILTER_SANITIZE_FULL_SPECIAL_CHARS), $crudArray);
+
+      if((isset($_POST['dog_app']))&&$needle&&$type==='insert') {
         if (isset($_POST['dog_name'])&&isset($_POST['dog_weight'])&&isset($_POST['dog_breed'])&&isset($_POST['dog_color'])) {
-          $container=new Dog_container(filter_var($_POST['dog_app'], FILTER_SANITIZE_FULL_SPECIAL_CHARS));
-          if (isset($container)) {
+
             $dog_name=filter_var($_POST['dog_name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $dog_color=filter_var($_POST['dog_color'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $dog_weight=filter_var($_POST['dog_weight'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $dog_breed=filter_var($_POST['dog_breed'],FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        
-            $properties=array(
-              $dog_name,
-              $dog_breed,
-              $dog_color,
-              $dog_weight
-            );
-            //dog properties
-            $lab = $container->create_object($properties);
-          } else {
-            throw new Exception('"dog_interface.php" Dog_container instance not created');
-          }
-      
-          if ($lab != false) {
-            list($name_error, $breed_error, $color_error, $weight_error) = explode(',', $lab->to_string());
-/*             show(explode(',', $lab->to_string())); */
-            $name_update = $name_error == 'true' ? true : false;
-            $breed_updated = $breed_error == 'true' ? true : false;
-            $color_update = $color_error == 'true' ? true : false;
-            $weight_update = $weight_error = 'true' ? true : false;
-            
-            $dogs_array['errors'] = array (
-              0 => $name_update,
-              1 => $breed_updated,
-              2 => $color_update,
-              3 => $weight_update
-            );
 
-            $dogs_array['credentials'] = array (
-              0 => $lab->get_dog_name(),
-              1 => $lab->get_dog_breed(),
-              2 => $lab->get_dog_color(),
-              3 => $lab->get_dog_weight(),
-            );
+            if ($dog_breed != -1) {
+              $properties=array(
+                'dogname' => $dog_name,
+                'dogbreed' => $dog_breed,
+                'dogcolor' => $dog_color,
+                'dogweight' => $dog_weight
+              );
 
-            $_SESSION['created-dog'] = $dogs_array;
-            
-            if (file_exists(__DIR__."//..//views//table.view.php")) {
-              require(__DIR__."//..//views//table.view.php");
-              $tableInstance = new Table_view($dogs_array);
-              $table = $tableInstance->createTableDog();
-
-              if ($table != strip_tags($table)) {
+              $model = new Model();
+              $inserted = $model->dogCrud($properties, $type);
+              if (is_array($inserted)) {
                 http_response_code(200);
-                header("Content-Type: text/html");
-                echo $table;
-              } else {
-                throw new Exception("Table not created", 500);
-              }
+                header('Content-Type: application/json');
+                $json = json_encode($inserted);
+                echo $json; 
+              } 
             } else {
-              throw new Exception('table.view.php not found', 500);
+              throw new Exception('breed-not-selected', 400);
             }
-          } else {
-            throw new Exception('"dog_interface.php" dog not created');
-          }
         } else {
-          http_response_code(401);
-          headers('Content-Type: text/plain');
-          echo 'Missing or invalid parameters. Please go back to the dog home page to enter valid information. Dog Creation Page';
-          throw new Exception('missing parameters', 401);
+          throw new Exception('missing-parameters', 401);
         }
-      } else {
-        http_response_code(401);
-        headers('Content-Type: text/plain');
-        echo 'Request is not valid';
-        throw new Exception('request not valid', 401);
+      } else if ($type === 'select'&&$needle&&$_GET['id']) {
+        $id['id'] = $_GET['id'];
+        $dogCrud = new Model();
+        $dogsArray = $dogCrud->dogCrud($id, $type);
+        if (is_array($dogsArray)) {
+          http_response_code(200);
+          header('Content-Type: application/json');
+          $json = json_encode($dogsArray);
+          echo $json; 
+        } 
+
+      } else if ($_SERVER['REQUEST_METHOD'] === 'DELETE' && $type==='delete'&&$needle) {
+        $urlArray = explode('/',$_GET['url']);
+        $id = $urlArray[count($urlArray)-1];
+        if (preg_match('/^\d*$/', $id) === 1) {
+          $idNum = (int)$id;
+          $dogCrud = new Model();
+          $deleted = $dogCrud->dogCrud($idNum, $type);
+          if ($deleted === $idNum) {
+            http_response_code(200);
+            header('Content-Type: text/plain');
+            echo $idNum;
+          } 
+        }
+
+      } else if ($_SERVER['REQUEST_METHOD'] === 'PUT' && $type==='update'&&$needle) {
+        $updatedDog = file_get_contents('php://input', true);
+        if ($updatedDog === null) {
+          throw new Exception('invalid data', 400);
+        }
+        $updatedDogArray = json_decode($updatedDog, true);
         
+        $newDog['dogname']=filter_var($updatedDogArray['dog_name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $newDog['dogcolor']=filter_var($updatedDogArray['dog_color'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $newDog['dogbreed']=filter_var($updatedDogArray['dog_breed'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $newDog['dogweight']=filter_var($updatedDogArray['dog_weight'],FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+        if ($updatedDogArray['dog_breed'] == -1) {
+          throw new Exception('breed-not-selected', 400);
+        }
+
+        $id = filter_var($updatedDogArray['id'],FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+        $updatedArray = array(
+          $id => $newDog
+        );
+
+        $dogCrud = new Model();
+        $updated = $dogCrud->dogCrud($updatedArray, $type);
+
+        if ($updated === 'updated') {
+          http_response_code(200);
+          $response['message'] = 'ALL';
+          header('Content-Type: text/plain');
+          echo json_encode($response);
+        }
+
+      } else {
+        throw new Exception('request not valid', 401);
       } 
       } catch (Exception $e) {
-        require_once(__DIR__ ."//..//models//logs.model.php");
-        $exception = new Logs_model($e->getMessage(), 'exception');
-        $last_log_message = $exception->logException();
-        unset($exception);
-        $exceptionCode = $e->getCode();
-        if ($exceptionCode >= 500) {
-          http_response_code(500);
-          header("Content-Type: text/plain");
-          echo "Error 500: We are sorry, we are going to resolve the issue as soon as possible";
+        if ($e->getCode() >= 400 && $e->getCode() < 500) {
+          http_response_code((int) $e->getCode());
+          header('Content-Type: application/json');
+          $response['result'] = $e->getMessage();
+          $response['status'] = $e->getCode();
+          require_once(__DIR__ ."//..//models//logs.model.php");
+          $exception = new Logs_model($e->getMessage()." ".(string) $e->getFile(), 'exception');
+          $last_log_message = $exception->logException();
+          unset($exception);
+          echo json_encode($response);
         } else {
-          http_response_code($exceptionCode);
-          header("Content-Type: text/plain");
-          echo $e->getMessage();
+          http_response_code(500);
+          header('Content-Type: application/json');
+          $response['result'] = 'Error 500, we are sorry! We are goin to fix that as soon as possible';
+          $response['status'] = 500;
+  
+          require_once(__DIR__ ."//..//models//logs.model.php");
+          $exception = new Logs_model($e->getMessage()." ".(string)$e->getFile(), 'exception');
+          $last_log_message = $exception->logException();
+          unset($exception);
+          echo json_encode($response);
         }
       } 
   }
 
   function getbreeds() {
+    $this->requireAuth();
     try {
       if (isset($_GET['type'])) {
         $selectBox_request=$_GET['type'];

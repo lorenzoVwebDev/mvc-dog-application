@@ -34,7 +34,7 @@ class Dog_container {
     }
   }
 
-  function create_object($properties) {
+  function create_object($properties = '') {
     $dog_loc=__DIR__.$this->get_dog_application();
     if(($dog_loc==false)||(!file_exists($dog_loc))) {
       //print "doesn't work"."<br>";

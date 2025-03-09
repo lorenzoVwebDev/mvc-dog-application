@@ -1,10 +1,10 @@
 <?php 
 class Dog_entity {
   //Properties IMPORTANT (set the properties private after the development process)
-  private $dog_weight = 0;
+  private $dog_name = "no name";
   private $dog_breed = "no breed";
   private $dog_color = "no color";
-  private $dog_name = "no name";
+  private $dog_weight = 0;
   private $error_message = "??";
   private $allowed_colors = array (
     'Brown',
@@ -15,13 +15,31 @@ class Dog_entity {
   );
   //Constructor
   function __construct($properties_array) {
-    $error_name = $this->set_dog_name($properties_array[0]) == true ? 'true,' : 'false,';
-    $error_breed = $this->set_dog_breed($properties_array[1]) == true ? 'true,' : 'false,';
-    $error_color = $this->set_dog_color($properties_array[2]) == true ? 'true,' : 'false,';
-    $error_weight = $this->set_dog_weight($properties_array[3]) == true ? 'true,' : 'false,';
+    $error_name = $this->set_dog_name($properties_array['dogname']) == true ? 'true,' : 'false,';
+    $error_breed = $this->set_dog_breed($properties_array['dogbreed']) == true ? 'true,' : 'false,';
+    $error_color = $this->set_dog_color($properties_array['dogcolor']) == true ? 'true,' : 'false,';
+    $error_weight = $this->set_dog_weight($properties_array['dogweight']) == true ? 'true,' : 'false,';
 
     $this->error_message = $error_name.$error_breed.$error_color.$error_weight;
   }
+
+  public function insert_data($type) {
+
+    $container = new Dog_container('dog_data_model_mysql');
+    $data = $container->create_object();
+    $methods_array = get_class_methods($data);
+    $last_position = count($methods_array) - 2;
+    $method_name = $methods_array[$last_position];
+    $records_array = array(array(
+      'dogname' => $this->dog_name,
+      'dogbreed' => $this->dog_breed,
+      'dogcolor' => $this->dog_color,
+      'dogweight' => $this->dog_weight
+    ));
+    $newTaskIndex = $data->$method_name($type, $records_array); 
+    unset($data);
+    return $newTaskIndex;
+}
   //returns the error message
   public function to_string() {
     return $this->error_message;

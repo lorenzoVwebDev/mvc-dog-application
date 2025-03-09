@@ -15,4 +15,24 @@
             <location>breeds.xml</location>
         </type>
     </application>
+        <application>
+        <type ID='task_data_model_xml'>
+            <location>//..//models//task_data_xml.model.php</location>
+        </type>
+    </application>
+        <application>
+        <type ID='dog_data_model_mysql'>
+            <location>//..//models//dog_data_mysql.model.php</location>
+        </type>
+    </application>
+    <application>
+        <type ID='task_data_storage'>
+            <location>//..//storage//xml//tasks.xml</location>
+        </type>
+    </application>
+        <application>
+        <type ID='users_json_storage'>
+            <location>//..//storage//json//users.json</location>
+        </type>
+    </application>
 </dog_applications>

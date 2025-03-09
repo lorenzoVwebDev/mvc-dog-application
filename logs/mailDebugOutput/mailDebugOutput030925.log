@@ -1,0 +1,732 @@
+CLIENT -> SERVER: EHLO mvc-dog-application
+CLIENT -> SERVER: STARTTLS
+CLIENT -> SERVER: EHLO mvc-dog-application
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: [credentials hidden]CLIENT -> SERVER: [credentials hidden]CLIENT -> SERVER: MAIL FROM:<lorenzoviganego@lorenzo-viganego.com>
+CLIENT -> SERVER: RCPT TO:<lorenzo.viganego@libero.it>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Sun, 9 Mar 2025 18:58:45 +0000
+CLIENT -> SERVER: To: lorenzo.viganego@libero.it
+CLIENT -> SERVER: From: LorenzoVwebdev <lorenzoviganego@lorenzo-viganego.com>
+CLIENT -> SERVER: Subject: MVC mailer form portfolio project
+CLIENT -> SERVER: Message-ID: <p63o4Zo8oVMxyjB792KUDEIY9dSA9AJVtUoQzoig84@mvc-dog-application>
+CLIENT -> SERVER: X-Mailer: PHPMailer 6.9.3 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: text/html; charset=iso-8859-1
+CLIENT -> SERVER: 
+CLIENT -> SERVER: admin Lorenzo Viganego
+CLIENT -> SERVER: exception table 2025-03-09<table class='exception-table-container' style='
+CLIENT -> SERVER:         width: 100%;
+CLIENT -> SERVER:         border-collapse: collapse;
+CLIENT -> SERVER:         border: 1px solid #ddd;
+CLIENT -> SERVER:         font-family: Arial, sans-serif;
+CLIENT -> SERVER:         text-align: left;
+CLIENT -> SERVER:     ><tr style='background-color: #f2f2f2;'><th style='
+CLIENT -> SERVER:                     background-color: #90EE90;
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 10px;
+CLIENT -> SERVER:                     font-weight: bold;
+CLIENT -> SERVER:                 '>Date</th><th style='
+CLIENT -> SERVER:                     background-color: #90EE90;
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 10px;
+CLIENT -> SERVER:                     font-weight: bold;
+CLIENT -> SERVER:                 '>Type</th><th style='
+CLIENT -> SERVER:                     background-color: #90EE90;
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 10px;
+CLIENT -> SERVER:                     font-weight: bold;
+CLIENT -> SERVER:                 '>Message</th></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 08:12:57</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>log file not found
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 11:11:00</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>signup_mysql.model.php missing C:\Users\loren\webDevelopment\phpExcercises\mvc-dog-application\app\core\Model.php
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 11:12:48</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>signup_mysql.model.php missing C:\Users\loren\webDevelopment\phpExcercises\mvc-dog-application\app\core\Model.php
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 11:24:39</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>Username or Password are wrong C:\Users\loren\webDevelopment\phpExcercises\mvc-dog-application\app\core\Model.php
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 11:25:40</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>Username or Password are wrong C:\Users\loren\webDevelopment\phpExcercises\mvc-dog-application\app\core\Model.php
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 11:27:07</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>Username or Password are wrong C:\Users\loren\webDevelopment\phpExcercises\mvc-dog-application\app\core\Model.php
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 01:51:46</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>breed-not-selected
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 01:54:33</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>breed-not-selected
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 02:16:05</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>breed-not-selected
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 02:21:51</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>Table 'mvc_dog_application.tasks' doesn't exist
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 02:22:28</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>Table 'mvc_dog_application.tasks' doesn't exist
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 02:53:59</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>Data too long for column 'dogbreed' at row 1
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 03:05:04</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>breed-not-selected
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 03:22:11</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>request not valid
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 03:52:18</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>breed-not-selected
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 03:53:16</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>request not valid
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 03:53:30</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>request not valid
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 04:07:09</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>request not valid
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 04:07:17</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>request not valid
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 04:10:16</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>fff
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 04:11:13</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>fff
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 04:11:26</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>fff
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 04:19:36</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>deleteRecord is not working properly
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 04:48:01</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>breed-not-selected
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 04:48:04</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>deleteRecord is not working properly
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 04:48:41</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>deleteRecord is not working properly
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 04:48:45</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>deleteRecord is not working properly
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 04:48:48</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>deleteRecord is not working properly
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 04:49:44</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>deleteRecord is not working properly
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 04:50:43</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>deleteRecord is not working properly
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 04:52:13</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>deleteRecord is not working properly
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 04:52:35</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>deleteRecord is not working properly
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 04:54:37</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>deleteRecord is not working properly
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 04:55:40</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>deleteRecord is not working properly
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 04:55:53</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>deleteRecord is not working properly
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 04:56:23</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>breed-not-selected
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 05:02:44</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>breed-not-selected
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 05:03:55</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>deleteRecord is not working properly
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 05:04:40</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>deleteRecord is not working properly
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 05:07:53</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>deleteRecord is not working properly
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 05:07:54</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>deleteRecord is not working properly
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 05:11:41</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>deleteRecord is not working properly
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 06:23:16</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>request not valid
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 06:26:26</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>string to array conversion failed in task_dat_xml.model.php
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 06:28:26</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>invalid data
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 06:28:57</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>invalid data
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 06:29:06</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>invalid data
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 06:30:24</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>breed-not-selected
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 06:30:28</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>breed-not-selected
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 06:38:47</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>string to array conversion failed in task_dat_xml.model.php
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 06:39:08</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>request not valid
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 06:41:15</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>breed-not-selected
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 06:41:16</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>breed-not-selected
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 06:42:33</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>breed-not-selected
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 06:43:59</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>breed-not-selected
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 06:44:58</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>breed-not-selected C:\Users\loren\webDevelopment\phpExcercises\mvc-dog-application\app\controllers\Dog.php
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 06:44:58</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>string to array conversion failed in task_dat_xml.model.php C:\Users\loren\webDevelopment\phpExcercises\mvc-dog-application\app\core\Model.php
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 06:49:14</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>breed-not-selected C:\Users\loren\webDevelopment\phpExcercises\mvc-dog-application\app\controllers\Dog.php
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 06:49:36</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>breed-not-selected C:\Users\loren\webDevelopment\phpExcercises\mvc-dog-application\app\controllers\Dog.php
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 06:50:38</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>breed-not-selected C:\Users\loren\webDevelopment\phpExcercises\mvc-dog-application\app\controllers\Dog.php
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 06:51:25</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>breed-not-selected C:\Users\loren\webDevelopment\phpExcercises\mvc-dog-application\app\controllers\Dog.php
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 06:53:17</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>breed-not-selected C:\Users\loren\webDevelopment\phpExcercises\mvc-dog-application\app\controllers\Dog.php
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 06:53:21</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>breed-not-selected C:\Users\loren\webDevelopment\phpExcercises\mvc-dog-application\app\controllers\Dog.php
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 06:53:27</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>breed-not-selected C:\Users\loren\webDevelopment\phpExcercises\mvc-dog-application\app\controllers\Dog.php
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 06:53:32</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>string to array conversion failed in task_dat_xml.model.php C:\Users\loren\webDevelopment\phpExcercises\mvc-dog-application\app\core\Model.php
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 06:53:44</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>string to array conversion failed in task_dat_xml.model.php C:\Users\loren\webDevelopment\phpExcercises\mvc-dog-application\app\core\Model.php
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 06:54:53</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>string to array conversion failed in task_dat_xml.model.php C:\Users\loren\webDevelopment\phpExcercises\mvc-dog-application\app\core\Model.php
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 06:55:21</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>string to array conversion failed in task_dat_xml.model.php C:\Users\loren\webDevelopment\phpExcercises\mvc-dog-application\app\core\Model.php
+CLIENT -> SERVER: </td></tr><tr><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>03.09.2025 06:56:04</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>User Error</td><td style='
+CLIENT -> SERVER:                     border: 1px solid #ddd;
+CLIENT -> SERVER:                     padding: 8px;
+CLIENT -> SERVER:                 '>string to array conversion failed in task_dat_xml.model.php C:\Users\loren\webDevelopment\phpExcercises\mvc-dog-application\app\core\Model.php
+CLIENT -> SERVER: </td></tr></table>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT

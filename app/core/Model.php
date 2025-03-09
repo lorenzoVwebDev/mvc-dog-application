@@ -88,4 +88,110 @@ class Model {
     } 
   }
 
+  function dogCrud(array|int $dogarray, $type = 'read') {
+    if (file_exists(__DIR__."//..//models//entities//dog.entity.php")) {
+      require_once(__DIR__."//..//models//entities//dog.entity.php");
+      if ($type === 'insert') {
+        $taskObject = new Dog_entity($dogarray);
+        $newTaskIndex =  $taskObject->insert_data($type);
+        if (is_numeric($newTaskIndex)) {
+          $dogarray['index'] = $newTaskIndex;
+          return $dogarray;
+        }
+      } else if ($type === 'select') {
+        $container = new Dog_container('dog_data_model_mysql');
+        $taskDataModel = $container->create_object();
+
+        $methods = get_class_methods($taskDataModel);
+        $lastPosition= count($methods) - 2;
+        $method_name = $methods[$lastPosition];
+        $array = $taskDataModel->$method_name($type, $dogarray['id']);
+        if (is_array($array)) {
+          return $array;
+        } else {
+          throw new Exception('string to array conversion failed in task_dat_xml.model.php', 500);
+        }
+      } else if ($type === 'delete') {
+        $container = new Dog_container('dog_data_model_mysql');
+        $taskDataModel = $container->create_object();
+        $methods = get_class_methods($taskDataModel);
+        $last_method = $methods[count($methods)-2];
+        $taskDataModel->$last_method($type, $dogarray);
+        return $taskArray;
+      } else if ($type === 'update') {
+   
+        $container = new Dog_container('dog_data_model_mysql');
+        $taskDataModel = $container->create_object();
+        $methods = get_class_methods($taskDataModel);
+        $lastPosition = count($methods)-2;
+        $method_name = $methods[$lastPosition];
+        $taskDataModel->$method_name($type, $dogarray);
+        return 'updated';
+      }
+    } else {
+      throw new Exception('task.entity.php not found', 500);
+    }
+}
+
+function authentication($type, array $credentials) {
+  if ($type === 'sign-in') {
+    if (file_exists(__DIR__."//..//models//authentication//signin_mysql.model.php")) {
+      require_once(__DIR__."//..//models//authentication//signin_mysql.model.php"); 
+      $signinInstance = new Signin_mysql($credentials);
+      $tokens = $signinInstance->userValidation();
+      if ($tokens) {
+        if (($_SESSION['username'] === $credentials['username']&&$_SESSION['password'] === $credentials['password'])&&(array_key_exists('access_token', $tokens) && array_key_exists('access_token', $tokens))) {
+          unset($signinInstance);
+          return $tokens;
+        } else {
+          throw new Exception('$_SESSION["username"] and $_SESSION["password"] have not been set correctly with the user\'s username and password');
+        } 
+      } else if ($tokens === false && $_SESSION['message'] === "changepassword") {
+        return array (
+          'message' => $_SESSION['message']
+        );
+      } else if ($tokens === false && $_SESSION['message'] === "invalid") {
+        unset($signinInstance);
+        throw new Exception('Username or Password are wrong', 401);
+      } else if ($tokens === false && $_SESSION['message'] === "passed") {
+        unset($signinInstance);
+        throw new Exception('Too Many Attempts', 429 );
+      }
+    } else {
+      throw new Exception('signin_json.model.php missing', 500);
+    }
+  } else if ($type === 'sign-up') {
+    if (file_exists(__DIR__."//..//models//authentication//signup_mysql.model.php")) {
+      require_once(__DIR__."//..//models//authentication//signup_mysql.model.php");
+      
+      $signUpInstance = new Signup_json($credentials);
+      $userCreated = $signUpInstance->userCreation();
+      if (isset($userCreated)) {
+        if ($userCreated) {
+          return $_SESSION['message'];
+        } else {
+          return $_SESSION['message'];
+        }
+      }
+    } else {
+      throw new Exception('signup_mysql.model.php missing', 500);
+    }
+  } else if ($type === 'change-password') {
+    if (file_exists(__DIR__."//..//models//authentication//changepwr_mysql.model.php")) {
+      require_once(__DIR__."//..//models//authentication//changepwr_mysql.model.php");
+      $changepwr = new Changepwr_mysql($credentials);
+      $pwrchanged = $changepwr->changePassword();
+      unset($changepwr);
+      if (isset($pwrchanged)) {
+        if ($pwrchanged) {
+          return $_SESSION['message'];
+        } else {
+          return $_SESSION['message'];
+        }
+      } 
+    } else {
+      throw new Exception('changepwr_json.model.php missing', 500);
+    }
+  }
+}
 }

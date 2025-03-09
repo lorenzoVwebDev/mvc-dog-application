@@ -1,9 +1,9 @@
 export function createTableAndMail(response, result) {
   if (response.status >= 200 && response.status<400) {
-    if (document.querySelector('.table-section')) {
-      document.querySelector('.table-section').innerHTML = '';
+    if (document.querySelector('.admin-table-section')) {
+      document.querySelector('.admin-table-section').innerHTML = '';
     }
-    let table = document.querySelector('.table-section')
+    let table = document.querySelector('.admin-table-section')
     let div = document.createElement('div');
     let mailFormDiv = document.createElement('div');
     mailFormDiv.classList.add('mail-form-container');
